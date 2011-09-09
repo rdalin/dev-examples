@@ -21,14 +21,18 @@
     <fieldset>
         <legend>OrderingList</legend>
         <h:form>
-            <in:orderingList id="orderingList" value="#{richBean.values}" var="item" itemValue="#{item}" itemLabel="#{item.title}" >
+            <in:orderingList id="orderingList1" value="#{richBean.values}" var="item" itemValue="#{item}" itemLabel="#{item.title}"
+                             onfocus="alert('focus')"
+                             onblur="alert('blur')"
+                             onchange="alert('changed')"
+                    >
                 <f:converter converterId="EntityBeanConverter" />
             </in:orderingList>
             <h:commandButton value="submit">
-                <f:ajax execute="@form" render="orderingList out" />
+                <f:ajax execute="@form" render="orderingList1 out1" />
             </h:commandButton>
 
-            <h:panelGroup id="out" class="out">
+            <h:panelGroup id="out1" class="out">
                 <ui:repeat value="#{richBean.values}" var="value">
                     <h:outputText value="#{value}" converter="EntityBeanConverter"/>
                     <br/>
@@ -39,7 +43,7 @@
     <fieldset>
         <legend>OrderingList - Columns</legend>
         <h:form>
-            <in:orderingList id="orderingList" value="#{richBean.values}" columnVar="item">
+            <in:orderingList id="orderingList2" value="#{richBean.values}" var="item">
                 <f:converter converterId="EntityBeanConverter" />
                 <it:column>
                     #{item.value}
@@ -49,10 +53,10 @@
                 </it:column>
             </in:orderingList>
             <h:commandButton value="submit">
-                <f:ajax execute="@form" render="orderingList out" />
+                <f:ajax execute="@form" render="orderingList2 out2" />
             </h:commandButton>
 
-            <h:panelGroup id="out" class="out">
+            <h:panelGroup id="out2" class="out">
                 <ui:repeat value="#{richBean.values}" var="value">
                     <h:outputText value="#{value}" converter="EntityBeanConverter"/>
                     <br/>
@@ -63,7 +67,7 @@
     <fieldset>
         <legend>OrderingList - disabled</legend>
         <h:form>
-            <in:orderingList id="orderingList" value="#{richBean.values}" columnVar="item" disabled="true" disabledClass="someDisabledClass">
+            <in:orderingList id="orderingList3" value="#{richBean.values}" var="item" disabled="true" disabledClass="someDisabledClass">
                 <f:converter converterId="EntityBeanConverter" />
                 <it:column>
                     #{item.value}
@@ -73,10 +77,10 @@
                 </it:column>
             </in:orderingList>
             <h:commandButton value="submit">
-                <f:ajax execute="@form" render="orderingList out" />
+                <f:ajax execute="@form" render="orderingList3 out3" />
             </h:commandButton>
 
-            <h:panelGroup id="out" class="out">
+            <h:panelGroup id="out3" class="out">
                 <ui:repeat value="#{richBean.values}" var="value">
                     <h:outputText value="#{value}" converter="EntityBeanConverter"/>
                     <br/>
@@ -87,7 +91,7 @@
     <fieldset>
         <legend>OrderingList - my-select-class</legend>
         <h:form>
-            <in:orderingList id="orderingList" value="#{richBean.values}" columnVar="item" selectItemClass="my-select-class">
+            <in:orderingList id="orderingList4" value="#{richBean.values}" var="item" selectItemClass="my-select-class">
                 <f:converter converterId="EntityBeanConverter" />
                 <it:column>
                     #{item.value}
@@ -97,10 +101,10 @@
                 </it:column>
             </in:orderingList>
             <h:commandButton value="submit">
-                <f:ajax execute="@form" render="orderingList out" />
+                <f:ajax execute="@form" render="orderingList4 out4" />
             </h:commandButton>
 
-            <h:panelGroup id="out" class="out">
+            <h:panelGroup id="out4" class="out">
                 <ui:repeat value="#{richBean.values}" var="value">
                     <h:outputText value="#{value}" converter="EntityBeanConverter"/>
                     <br/>
