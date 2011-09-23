@@ -22,13 +22,13 @@
         <legend>PickList w/ selectItem</legend>
         <h:form>
             <in:pickList id="pickList1" value="#{inputBean.values}" style="font-size: 2em;" sourceCaption="Source Items" targetCaption="target Items" 
-                         onsourcefocus="alert('source focus')"
-                         ontargetfocus="alert('target focus')"
-                         onfocus="alert('pickList focus')"
-                         onsourceblur="alert('source blur')"
-                         ontargetblur="alert('target blur')"
-                         onblur="alert('pickList blur')"
-                         onchange="alert('changed')"
+                         onsourcefocus="console.log('source focus')"
+                         ontargetfocus="console.log('target focus')"
+                         onfocus="console.log('pickList focus')"
+                         onsourceblur="console.log('source blur')"
+                         ontargetblur="console.log('target blur')"
+                         onblur="console.log('pickList blur')"
+                         onchange="console.log('changed')"
                          >
                 <f:selectItem itemLabel="Label#1" itemValue="Value#1" />
                 <f:selectItem itemLabel="Label#2" itemValue="Value#2" />
